@@ -1,7 +1,7 @@
 # Driver Backend API Documentation
 
 **Version:** 1.0.0
-**Base URL:** 'https://driver-backend-ten.vercel.app/api/v1/'
+**Base URL:** '/api/v1/'
 **Framework:** FastAPI (Python)
 **Auth:** JWT Bearer Token (Authorization: `Bearer <token>`)
 
