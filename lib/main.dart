@@ -15,7 +15,7 @@ class ZedwellApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Zedwell',
+      title: 'Dlive Driver',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
