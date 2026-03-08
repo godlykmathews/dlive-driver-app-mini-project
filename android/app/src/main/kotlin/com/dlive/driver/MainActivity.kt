@@ -1,4 +1,4 @@
-package com.example.dlive
+package com.dlive.driver
 
 import io.flutter.embedding.android.FlutterActivity
 

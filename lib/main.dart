@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'services/auth_service.dart';
+import 'services/location_service.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AuthService.instance.init();
-  runApp(const ZedwellApp());
+  await initLocationService();
+  if (AuthService.instance.isLoggedIn) {
+    startLocationTracking(); // fire-and-forget, never block startup
+  }
+  runApp(const DliveDriverApp());
 }
 
-class ZedwellApp extends StatelessWidget {
-  const ZedwellApp({super.key});
+class DliveDriverApp extends StatelessWidget {
+  const DliveDriverApp({super.key});
 
   @override
   Widget build(BuildContext context) {

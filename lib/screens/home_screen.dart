@@ -3,6 +3,7 @@ import '../models/invoice_group.dart';
 import '../models/route_info.dart';
 import '../services/api_service.dart';
 import '../services/auth_service.dart';
+import '../services/location_service.dart';
 import 'group_detail_screen.dart';
 import 'login_screen.dart';
 
@@ -95,6 +96,7 @@ class _HomeScreenState extends State<HomeScreen>
   }
 
   Future<void> _logout() async {
+    await stopLocationTracking();
     await ApiService.instance.logout();
     await AuthService.instance.clearSession();
     if (!mounted) return;
